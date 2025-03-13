@@ -15,6 +15,8 @@
 - [ ] M: Quiz for student frontend
 - [ ] M: Backend to grade
 - [ ] M: Frontend to display results
+- [ ] M: Set up docker\[-compose\] for hosting with Caddy
+- [ ] M: Figure out a deployment process (AWS? some VPS?)
 
 ### Someday
 
