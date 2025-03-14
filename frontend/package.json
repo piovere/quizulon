@@ -24,6 +24,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"svelte-qrcode": "^1.0.1"
+		"svelte-qrcode": "^1.0.1",
+		"uuid": "^11.1.0"
 	}
 }
