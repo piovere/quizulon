@@ -28,8 +28,8 @@ type Learner = {
 type Data = {
     questions: Question[],
     learners: Learner[],
-    responses: Response[]
+    responses: Response[],
     message_type: null
-}
+};
 
 type Message = Choice | Question | Response | Learner | Data;
