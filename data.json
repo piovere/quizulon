@@ -1,0 +1,187 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "text": "<p>A 30-year-old female with a medical history of anxiety and seasonal allergies presents for evaluation of palpitations and a racing heartbeat that has worsened over the last 3–4 days. Recently, her escitalopram (Lexapro) dosage was increased to 20 mg daily and she started using fluticasone propionate nasal spray (Flonase) and oral cetirizine (Zyrtec), 10 mg daily. A CBC, comprehensive metabolic panel, and TSH level are normal. A urine pregnancy test is negative. An EKG today shows a heart rate of 85 beats/min and a QTc interval of 500 milliseconds.</p><p>Which one of the following would be the most appropriate next step?</p>",
+            "choices": [
+                {
+                    "id": 1,
+                    "text": "Reassurance only",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Discontinuing cetirizine",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Discontinuing escitalopram",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Discontinuing fluticasone",
+                    "correct": false
+                },
+                {
+                    "id": 5,
+                    "text": "Echocardiography",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "<p>A 36-year-old female presents with a medical history of hypertension, hyperlipidemia, obesity, and 3 miscarriages. She is not currently pregnant. She was recently discharged from the hospital with her second deep vein thrombosis (DVT) in the past several years. A workup for the underlying cause of her thrombophilia is positive for antiphospholipid antibodies.</p><p>Which one of the following medications would be most appropriate for the long-term treatment of this patient’s DVT?</p>",
+            "choices": [
+                {
+                    "id": 6,
+                    "text": "Apixaban (Eliquis)",
+                    "correct": false
+                },
+                {
+                    "id": 7,
+                    "text": "Aspirin",
+                    "correct": false
+                },
+                {
+                    "id": 8,
+                    "text": "Clopidogrel (Plavix)",
+                    "correct": false
+                },
+                {
+                    "id": 9,
+                    "text": "Enoxaparin (Lovenox)",
+                    "correct": false
+                },
+                {
+                    "id": 10,
+                    "text": "Warfarin",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "<p>A 12-year-old female is brought to your clinic for a sports preparticipation evaluation for volleyball. Her family history is significant for a paternal grandfather with cardiovascular disease. In early childhood, she was diagnosed with atopic dermatitis and mild intermittent asthma that is controlled with a short-acting bronchodilator. The review of systems is unremarkable except for occasional shortness of breath when she is exposed to cats. On examination in a supine position, a systolic nonradiating murmur is best heard over the left upper sternal border. The murmur decreases with the Valsalva maneuver.<p></p>Which one of the following is the most likely diagnosis?</p>",
+            "choices": [
+                {
+                    "id": 11,
+                    "text": "An atrial septal defect",
+                    "correct": false
+                },
+                {
+                    "id": 12,
+                    "text": "Hypertrophic obstructive cardiomyopathy",
+                    "correct": false
+                },
+                {
+                    "id": 13,
+                    "text": "Mitral valve prolapse",
+                    "correct": false
+                },
+                {
+                    "id": 14,
+                    "text": "A pulmonary flow murmur",
+                    "correct": true
+                },
+                {
+                    "id": 15,
+                    "text": "Tricuspid stenosis",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "<p>A 65-year-old male sees you for an annual health maintenance examination. His past medical history is significant for hypertension and hyperlipidemia, which are both well controlled with medication. He had a myocardial infarction 10 years ago that was treated with angioplasty and he sees a cardiologist regularly. He has smoked 1 pack of cigarettes per day since age 16. His current medications include:</p><ul><li>Low-dose aspirin</li><li>Hydrochlorothiazide</li><li>Lisinopril (Zestril)</li><li>Rosuvastatin (Crestor)</li></ul><p>He currently walks 2000–3000 steps daily. In addition to recommending smoking cessation, you suggest a goal of more than 5000 steps daily. He tells you that his calves hurt when he walks more than 100 yards and he has to stop and rest before he can continue.</p><p>If the suspected diagnosis is confirmed with testing, then which one of the following would be the most appropriate initial treatment?</p>",
+            "choices": [
+                {
+                    "id": 16,
+                    "text": "A supervised exercise program",
+                    "correct": true
+                },
+                {
+                    "id": 17,
+                    "text": "Cilostazol",
+                    "correct": false
+                },
+                {
+                    "id": 18,
+                    "text": "Pentoxifylline",
+                    "correct": false
+                },
+                {
+                    "id": 19,
+                    "text": "Revascularization",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "<p>A 74-year-old male with no significant past medical history comes to your office because of pain in his left lower extremity. The patient’s leg was recently immobilized in a cast because of a fibular fracture. Doppler ultrasonography reveals a thrombosis of the iliac vein.</p><p>Which one of the following is indicated for this patient?</p>",
+            "choices": [
+                {
+                    "id": 20,
+                    "text": "No anticoagulation",
+                    "correct": false
+                },
+                {
+                    "id": 21,
+                    "text": "Anticoagulation for 3 months",
+                    "correct": true
+                },
+                {
+                    "id": 22,
+                    "text": "Anticoagulation for 6 months",
+                    "correct": false
+                },
+                {
+                    "id": 23,
+                    "text": "Anticoagulation for 12 months",
+                    "correct": false
+                },
+                {
+                    "id": 24,
+                    "text": "Extended anticoagulation with no set stop date",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "text": "<p>A 69-year-old male with a history of coronary artery disease sees you for follow-up after hospitalization for new-onset atrial fibrillation. After some difficulty with low blood pressure with other rate control agents, he was discharged on amiodarone.</p><p>This patient should be monitored for amiodarone toxicity with which one of the following?</p>",
+            "choices": [
+                {
+                    "id": 25,
+                    "text": "An amiodarone plasma level",
+                    "correct": false
+                },
+                {
+                    "id": 26,
+                    "text": "A blood glucose level",
+                    "correct": false
+                },
+                {
+                    "id": 27,
+                    "text": "A CBC with differential",
+                    "correct": false
+                },
+                {
+                    "id": 28,
+                    "text": "Pulmonary function testing",
+                    "correct": true
+                },
+                {
+                    "id": 29,
+                    "text": "Urinalysis",
+                    "correct": false
+                }
+            ]
+        }
+    ],
+    "responses": [],
+    "learners": []
+}
