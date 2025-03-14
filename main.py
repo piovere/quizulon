@@ -78,7 +78,7 @@ def get_grades():
             "answer": corrects,
         }
     )
-    return df.to_json()
+    return df.to_dict()
 
 
 @app.websocket("/ws/proctor/")
@@ -97,8 +97,8 @@ def process_proctor_message(msg):
             q = [
                 qi for qi in filter(lambda q: q.get("id") == new_question_id, questions)
             ]
-            manager.broadcast(json.dumps(q[0].get("choices")))
-            return json.dumps(q[0])
+            manager.broadcast(q[0].get("choices"))
+            return q[0]
         case "Response":
             DATA["responses"].append(
                 {
@@ -107,7 +107,7 @@ def process_proctor_message(msg):
                     "learner_id": msg.get("learner_id"),
                 }
             )
-            return json.dumps(DATA)
+            return DATA
         case "Learner":
             DATA["learners"].append(
                 {
@@ -115,7 +115,7 @@ def process_proctor_message(msg):
                     "learner_name": msg.get("learner_name"),
                 }
             )
-            return json.dumps(DATA)
+            return DATA
         case "Results":
             return get_grades()
 
