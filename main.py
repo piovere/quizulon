@@ -98,13 +98,14 @@ def process_proctor_message(msg):
                 qi for qi in filter(lambda q: q.get("id") == new_question_id, questions)
             ]
             manager.broadcast(q[0].get("choices"))
-            return q[0]
+            return {q[0]}
         case "Response":
             DATA["responses"].append(
                 {
                     "question_id": msg.get("question_id"),
                     "answer_id": msg.get("answer_id"),
                     "learner_id": msg.get("learner_id"),
+                    "message_type": "Response"
                 }
             )
             return DATA
@@ -113,6 +114,7 @@ def process_proctor_message(msg):
                 {
                     "learner_id": msg.get("learner_id"),
                     "learner_name": msg.get("learner_name"),
+                    "message_type": "Learner"
                 }
             )
             return DATA
