@@ -1,5 +1,6 @@
 <script>
-    let { question } = $props();
+    import Timer from './Timer.svelte';
+    let { question, time } = $props();
 </script>
 
 <div>
@@ -10,6 +11,9 @@
     {/each}
     </div>
 </div>
+{#key question.id}
+<Timer {time}/>
+{/key}
 
 <style>
     div.question {
