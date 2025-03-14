@@ -11,7 +11,7 @@
     var messages: Message[] = $state([]);
     var questions: Question[] = $state([]);
     var learners: Learner[] = $state([]);
-    var data: Data = $state();
+    var data: Data | undefined = $state();
 
     let time: number = 60 * 1000;
 
