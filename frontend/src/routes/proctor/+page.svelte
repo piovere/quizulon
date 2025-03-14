@@ -1,7 +1,8 @@
 <script lang="ts">
     import { getAbsoluteUrl } from "$lib/absolute";
     import { onMount } from 'svelte';
-    import QrCode from "svelte-qrcode";
+    import QrCode from 'svelte-qrcode';
+    import type { PageData } from './$types';
 
     import DisplayQuestion from './DisplayQuestion.svelte';
 
@@ -9,10 +10,31 @@
     let learnerURL: string = $state('');
     var messages: Message[] = $state([]);
 
+    let dumbq: Question = {
+        "id": 42,
+        "text": "<p>I hate this stuff</p><p>Don't you?</p>",
+        "choices": [
+            {
+                "id": 99,
+                "text": "Reassurance only",
+                "correct": false
+            },
+            {
+                "id": 101,
+                "text": "Dalmations",
+                "correct": true
+            }
+        ]
+    }
+
+    let currentQuestion: Question = $state(dumbq);
+
     let ws: WebSocket = new WebSocket(`ws:localhost:8000/ws/proctor/`);
 
     ws.onmessage = function(event) {
         let newQuestion: Question = JSON.parse(event.data);
+        console.log(JSON.parse(event.data))
+        currentQuestion = newQuestion;
         messages.push(newQuestion);
     }
 
@@ -47,4 +69,8 @@
         <li>{qid}: {qtext}</li>
         {/each}
     </ul>
+    {#if messages.length > 0}
+    {@const q = (messages[0] as Question)}
+    <DisplayQuestion question={dumbq} />
+    {/if}
 </main>
