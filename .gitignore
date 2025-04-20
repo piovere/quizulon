@@ -104,3 +104,8 @@ ENV/
 # database
 *.db
 
+
+
+# Added by cargo
+
+/target

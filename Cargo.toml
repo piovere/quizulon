@@ -1,0 +1,10 @@
+[package]
+name = "quizulon"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = { version = "4.10.2", features = ["rustls"] }
+actix-ws = "0.3.0"
+open = "5.3.2"
+sqlx = { version = "0.8.5", features = ["runtime-tokio", "derive", "sqlite"] }
