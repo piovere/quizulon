@@ -3,11 +3,12 @@ name = "quizulon"
 version = "0.1.0"
 description = "A quiz app for multiple participants"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
     "duckdb>=1.2.1",
     "fastapi[all]>=0.115.11",
     "pandas>=2.2.3",
+    "sqlmodel>=0.0.24",
     "uvicorn[standard]>=0.34.0",
 ]
 

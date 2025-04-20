@@ -1,8 +1,11 @@
 import json
 from pathlib import Path
+from uuid import UUID
+from typing import Annotated
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
+from sqlmodel import Field, Session, SQLModel, create_engine, select
 import pandas as pd
 
 
@@ -13,28 +16,67 @@ DATA = json.loads(Path("data.json").read_text(encoding="utf-8"))
 HTML = Path("test.html").read_text(encoding="utf-8")
 
 
+DATABASE_FILE: Path = Path(__file__).parent / "db" / "quizulon.db"
+DATABASE_URL: str = f"sqlite:///{DATABASE_FILE}"
+
+CONNECT_ARGS = { "check_same_thread": False }
+
+ENGINE = create_engine(DATABASE_URL, echo=True, connect_args=CONNECT_ARGS)
+SQLModel.metadata.create_all(ENGINE)
+
+class ChoiceBase(SQLModel):
+    """A response option for a question"""
+    text: str = Field(index=False)
+    correct: bool | None = Field(index=True)
+
+class Choice(ChoiceBase, table=True):
+    """A response option for a question, suitable for a database"""
+    id: int | None = Field(default=None, primary_key=True)
+
+    question_id: int | None = Field(default=None, foreign_key="question.id")
+
+class QuestionBase(SQLModel):
+    """Elements included in every question"""
+    text: str
+    choices: list[Choice]
+
+class Question(QuestionBase, table=True):
+    """Database-aware version of question"""
+    id: int
+
+class Learner(SQLModel):
+    """Someone taking the quiz"""
+    id: UUID
+    name: str
+
 @app.get("/ws/html/")
-async def root():
+async def root() -> HTMLResponse:
+    """Default webpage"""
     return HTMLResponse(HTML)
 
 
 class ConnectionManager:
-    def __init__(self):
+    """Handle a pool of websocket connections"""
+    def __init__(self) -> None:
         self.active_connections: list[WebSocket] = []
 
-    async def connect(self, websocket: WebSocket):
+    async def connect(self, websocket: WebSocket) -> None:
+        """Actions for when a client connects"""
         await websocket.accept()
         self.active_connections.append(websocket)
 
-    def disconnect(self, websocket: WebSocket):
+    def disconnect(self, websocket: WebSocket) -> None:
+        """Actions for when a client disconnects"""
         self.active_connections.remove(websocket)
 
-    async def send_individual_message(self, message: str, websocket: WebSocket):
-        await websocket.send_json(message)
+    async def send_individual_message(self, message: str, websocket: WebSocket) -> None:
+        """Send a message to a single client"""
+        await websocket.send_json(data=message)
 
-    async def broadcast(self, message: str):
+    async def broadcast(self, message: str) -> None:
+        """Send a message to all clients"""
         for connection in self.active_connections:
-            await connection.send_json(message)
+            await connection.send_json(data=message)
 
 
 manager = ConnectionManager()
